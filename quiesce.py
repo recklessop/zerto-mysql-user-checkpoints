@@ -36,9 +36,9 @@ try:
 except:
     outputf1.write(dt)
     outputf1.write( "\n unexpected error from MySQL, unable to do flush tables with read lock, Please check MySQL error logs for more info\n")
-while True:
-    check = os.path.exists ("/tmp/freeze_snap.lock")
-if check == True:
-    continue
-else:
-    break
+    while True:
+        check = os.path.exists ("/tmp/freeze_snap.lock")
+    if check == True:
+        continue
+    else:
+        break
