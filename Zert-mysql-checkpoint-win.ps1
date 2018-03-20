@@ -3,7 +3,7 @@
 # 
 # By Justin Paul, Zerto Technical Alliances Architect
 # Contact info: jp@zerto.com, @recklessop on twitter
-# Repo: https://www.github.com/Zerto-ta-public/MySQLDB-Journal-Checkpoints
+# Repo: https://www.github.com/recklessop/zerto-mysql-user-checkpoints
 #
 # This script is used to flush open table data to disk before taking a
 # Zerto User Checkpoint. Once the checkpoint is created. Tables are unlocked
