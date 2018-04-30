@@ -53,7 +53,9 @@ Invoke-MySqlQuery -Query 'FLUSH TABLES WITH READ LOCK'
 #Do Zerto Check Point
 $checkpointInfo = ""
 Write-Host "Calling ZVM..."
-$checkpointInfo = Set-Checkpoint $ZVMServer $ZVMPort -Username $ZVMUser -Password $ZVMPass -VirtualProtectionGroup $VPGName -Tag 'MySQLDB Frozen by Zerto' -Confirm:$false
+$checkpointInfo = Set-Checkpoint $ZVMServer $ZVMPort -Username $ZVMUser -Password $ZVMPass -VirtualProtectionGroup $VPGName `
+-Tag 'MySQLDB Frozen by Zerto' -Confirm:$false
+
 If ($checkpointInfo)
 {
     Write-Host "Checkpoint Inserted."
@@ -64,6 +66,5 @@ If ($checkpointInfo)
 #unfreeze mysql after checkpoint
 Write-Host "Unlocking Tables"
 Invoke-MySqlQuery -Query 'UNLOCK TABLES'
-
 
 Disconnect-MySqlServer
